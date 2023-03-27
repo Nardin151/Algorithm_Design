@@ -13,15 +13,15 @@ public static void main(String[] args)
 
 		// TODO Auto-generated method stub
 		private static void quicksort(int [] array, int leftElement, int rightElement)
-		{	// One element in the array is a sorted element - return please you are done
-			if (leftElement >= rightElement) // the left element is now in the right sub array or left is equal to the right
+		{	// One element in the array is a sorted element - return please, you are done
+			if (leftElement >= rightElement) // the left element is now in the right sub array or when the left element is equal to the right
 				return;
-			//choose the pivot last element in our array
+			//choose the pivot which is the last element in our array
 			int pivot = array[rightElement];
 			int left = leftElement;
 			int right = rightElement;
 			while (left < right)
-			{	// look for element that are not in their right sub array
+			{	// look for elements that are not in their right position and swap them
 				while (array[left] <= pivot && left < right)
 				{
 					left++; // move forward you don't need to do anything ,  as the element is placed correctly
@@ -30,13 +30,13 @@ public static void main(String[] args)
 				{
 					right--; // move backward you don't need to do anything , as the element is placed correctly
 				}
-				// once we came out of the 2 while loops that means that we encountered elements that are at the left and are > than the pivot and 
-				// elements that are in the right and are < of the pivot
+				// once we come out of the 2 while loops that means that we encountered elements that are at the left sub array and are > than the pivot and 
+				// or elements that are in the right sub array and are < than the pivot
 				// what we need to do is to swap those elements
 				swap(array, left, right);
 			}
 			// once we come out of this outer while loop
-			// it means that the left and right pointer has met each other and are standing at one element
+			// it means that the left and right pointer have met each other and are standing at one element
 			// what we need to do is to swap the left element with the pivot
 			swap(array,left,rightElement);
 			// after this part we are sure that the pivot is sorted and placed in its correct position
